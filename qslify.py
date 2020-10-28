@@ -11,7 +11,7 @@ if __name__ == "__main__":
     import argparse
     
     fields = {
-        'address': '12345 NE Street St\nPlaceville, ST 55555',
+        'address': '12345 NE Street St, Apt C, Placeville, ST 55555',
         'callsign': 'AA1AAA',
         'tagline': 'QSL de Person Personly',
         'name': 'Person Personly',

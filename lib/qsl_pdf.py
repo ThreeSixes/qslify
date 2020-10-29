@@ -70,12 +70,19 @@ class QslPdf:
                          color=frame_color, font="Helvetica")
         self.__draw_text("(2) Fold along this line", (6.55 * inch, 6.47 * inch), 8,
                          color=frame_color, font="Helvetica")
-        self.__draw_text("Message", (7.55 * inch, 5.8 * inch), 20,
-                         color=message_color, font="Helvetica-Oblique")
+
+
+    def __add_message_text(self, message, size=8, location=(3.8 * inch, 9.5 * inch),
+                           color=colors.black):
+        """
+        Add the message text to the canvas.
+        """
+
+        self.__draw_text(message, location, size, color=color, font="Helvetica")
 
 
     def __add_tagline(self, tagline, size=12, location=(1.05 * inch, 9.5 * inch),
-                       color=colors.red):
+                     color=colors.red):
         """
         Add the tagline to the canvas.
         """
@@ -108,6 +115,18 @@ class QslPdf:
 
         # Save our file.
         self.__canvas.save()
+
+
+    def __draw_paragraph(self, text, location, size_pt, color=None, font="Helvetica"):
+        """
+        Draw text on our canvas.
+        """
+
+        if color is not None:
+            self.__canvas.setFillColor(color)
+        
+        self.__canvas.setFont(font, size_pt)
+        self.__canvas.drawString(location[0], location[1], text)
 
 
     def __draw_text(self, text, location, size_pt, color=None, font="Helvetica"):

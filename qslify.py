@@ -14,6 +14,7 @@ if __name__ == "__main__":
         'address': '12345 NE Street St, Apt C, Placeville, ST 55555',
         'callsign': 'AA1AAA',
         'tagline': 'QSL de Person Personly',
+        'message': 'Thanks for the QSO! 73',
         'name': 'Person Personly',
         'qth': 'AA11bb',
         'qso_callsign': 'AB1BBB'
